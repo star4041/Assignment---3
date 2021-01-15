@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>Assignment - 3 IMDb Home</title>
+	<meta name="author" content="Aksh">
+	<meta name="description" content="IMDB ">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="">
+	<link rel="icon" type="image/x-icon" href=""/>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+    <style>
+       body{
+            margin: 0px;
+            font-family: 'Darker Grotesque', sans-serif;
+            box-sizing: border-box;
+            background-color: black;
+        }
+        
+        container{
+            margin: 0;
+        }
+        
+       
+        
+        .logo{
+            float: left;   
+        }
+        
+        .logo img{
+            width: 80px;
+            height: 40px;
+            border-radius: 5px;
+            margin: 5px;
+            margin-left: 100px;
+        }
+        
+       
+           
+    
+    /* colums */
+.column {
+  float: left;
+  padding: 10px;
+  height: 450px; 
+}
+    
+        
+.left {
+  width: 65%;
+}
+
+.right {
+  width: 30%;
+}
+
+        .right h3{
+            margin-top: 0px;
+            color: yellow;
+        }        
+
+.row:after {	
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+    
+    .column.left {
+	height: 200px;
+}
+}
+    
+        .container1{
+            margin-top: 100px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }   
+        
+        .container2{
+            width: 100%;
+            height: 130px;
+            padding:2px;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .container2 img{
+            width: 24%;
+            height: auto;
+            float: left;
+        }
+        
+        
+        .point{
+            padding: 15px;
+            margin-left: 100px;
+            height: 100px;
+            position: relative;  
+            color: white;
+        }
+        
+        .Browse_link{
+            color: white;
+            text-decoration: none;
+        }
+        
+        .right h3 a:hover{
+            color: yellow;
+        }
+                
+        /*image conatiner*/
+        
+       .imagecontainer{
+            margin-top: 20px;
+            width: 80%;
+            height: 500px;
+            overflow-x: scroll;
+            background-color: black;
+            margin-left: auto;  
+            margin-right: auto;
+            padding: 10px;
+        }   
+        
+        .trtitle{
+            color: yellow;
+            margin-left: 150px;
+        }
+     
+        #resl{
+            display: flex;
+            flex: 0 0 auto;
+        }    
+        
+        
+    #trend {
+	display: flex;
+    flex: 0 0 auto;   
+}
+        
+    #nowplay {
+	display: flex;
+    flex: 0 0 auto;   
+}
+        #top {
+	display: flex;
+    flex: 0 0 auto;   
+}
+        #upcom {
+	display: flex;
+    flex: 0 0 auto;   
+}    
+        
+    
+    .to {
+	float: left;
+	width: 20%;
+	height: 450px;
+	max-height: auto;
+	background-color: #111;
+	margin-right: 20px;
+}
+    
+    .to img{
+        width: 200px;
+        cursor: pointer;
+    }
+        
+    .to_indent{
+        text-align: center;
+        font-size: 20px;
+    }    
+        
+    .to button{
+            padding: 5px 23px 5px;
+            color: #5799ef;
+            background-color: #222;
+            border: 2px solid transparent;
+            border-radius: 5px;    
+        }
+    @media screen and (max-width: 1270px) {
+            .to{
+                width: 100%!important;
+            }
+            
+            
+            .imagecontainer{
+                width: 100%;
+            }
+            
+        .trtitle{
+            margin-left: 30px;
+        }
+        }    
+        /*menu*/
+        *{
+  margin: 0;
+  padding: 0;
+  color: #f2f2f2;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+nav{
+  background: #222222;
+  padding: 10px 40px 10px 70px;
+  border: 1px solid #000;
+  border-left: none;
+  border-right: none;
+}
+nav ul{
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+nav ul li.logo{
+  flex: 1;
+  font-size: 30px;
+  font-weight: 700;
+}
+nav ul div.items{
+  padding: 0 25px;
+  display: inline-flex;
+}
+nav ul div.items a{
+  text-decoration: none;
+  font-size: 18px;
+  padding: 0 12px;
+}
+nav ul div.items a:hover{
+  color: cyan;
+}
+nav ul .search-icon{
+  height: 40px;
+  width: 240px;
+  display: flex;
+  background: #f2f2f2;
+  border-radius: 5px;
+  float: left;    
+}
+nav ul .search-icon input{
+  height: 100%;
+  width: 200px;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  color: #000;
+  font-size: 16px;
+  border-radius: 5px 0 0 5px;
+}
+nav ul .search-icon .icon{
+  height: 100%;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  border: 1px solid #cccccc;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+nav ul .search-icon .icon:hover{
+  background: #e6e6e6;
+}
+nav ul .search-icon .icon span{
+  color: #222222;
+  font-size: 18px;
+}
+nav ul li.btn{
+  font-size: 29px;
+  flex: 1;
+  padding: 0 40px;
+  display: none;
+}
+nav ul li.btn span{
+  height: 42px;
+  width: 42px;
+  text-align: center;
+  line-height: 42px;
+  border: 1px solid #151515;
+  border-radius: 5px;
+  cursor: pointer;
+}
+nav ul li.btn span.show:before{
+  content: '\f00d';
+}
+@media screen and (max-width: 1052px) {
+  nav{
+    padding: 10px 40px 10px 0px;
+  }
+  nav ul li.logo{
+    display: none;
+  }
+  nav ul div.items{
+    flex: 4;
+  }
+}
+@media screen and (max-width: 800px){
+  nav ul li.btn{
+    display: block;
+  }
+  nav{
+    z-index: 1;
+    padding: 9px 40px 9px 0;
+  }
+  nav ul div.items{
+    z-index: -1;
+    position: fixed;
+    top: -220px;
+    right: 0;
+    width: 100%;
+    background: #222222;
+    display: inline-block;
+    transition: top .4s;
+  }
+  nav ul div.items.show{
+    top: 60px;
+  }
+  nav ul div.items li{
+    text-align: center;
+    line-height: 30px;
+    margin: 30px 0;
+  }
+  nav ul div.items li a{
+    font-size: 19px;
+  }
+}
+@media screen and (max-width: 405px) {
+  nav ul{
+    flex-wrap: nowrap;
+  }
+  nav ul li.search{
+    width: 50vmin;
+  }
+  nav ul li input{
+    width: 40vmin;
+  }
+  nav ul li .search-icon{
+    width: 10vmin;
+  }
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  padding: 0 40px;
+  z-index: -2;
+}
+.content .text{
+  font-size: 40px;
+  font-weight: 800;
+  padding: 5px 0;
+  color: #202020;
+}
+.content .p{
+  font-size: 28px;
+  font-weight: 600;
+  color: #202020;
+}
+
+.items.show {
+	z-index: 999;
+}        
+    
+ /*feature today*/
+    
+    
+    .feature {
+            margin: 50px auto 20px;
+            width: 80%;
+            height: 350px;
+            
+        }
+        
+        .today{
+            float: left;
+            padding: 20px;
+            width: 30%;
+            height: 250px; 
+        }
+        
+        .feature h1{
+            color: yellow;    
+        }
+        
+        .today img{
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        
+        .today a{
+            color: white;
+            text-decoration: none;
+        }
+        
+        .today a:hover{
+            color: grey;
+        }
+        
+        
+        @media screen and (max-width: 600px) { 
+  .today {
+    width: 100%;
+  }
+}
+        
+        
+        /*overlay*/
+        #overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+              
+        
+    </style>    
+</head>
+
+<body>
+    <div class="container0">    
+     
+        <nav>
+      <ul>
+<li class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/375px-IMDB_Logo_2016.svg.png"></li>
+<li class="btn"><span class="fas fa-bars"></span></li>
+<li class="search-icon" id="search">
+          <input type="search" placeholder="Search" id="query">
+          <label class="icon">
+            <span onclick="searchmovie()" class="fas fa-search"></span>
+          </label>
+        </li>          
+<div class="items">
+<li><a href="#">IMDb pro</a></li>
+<li><a href="#">Watchlist</a></li>
+<li><a href="#">Signup</a></li>
+</div>
+
+</ul>
+</nav>
+            
+       
+        <div id="searchresults" style="display: none;">
+        <h1 class="trtitle">Search results</h1>
+        <div class="imagecontainer">   
+        <div id="resl"></div> 
+        </div> 
+        </div>
+        
+        
+        <div class="container1">   
+            <div class="row">
+                <div class="column left">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="https://m.media-amazon.com/images/M/MV5BN2QyNGJhM2MtOTYwZi00ZTNkLTk1MDQtNmFiOWZlZjk3Y2UzXkEyXkFqcGdeQXVyODk4OTc3MTY@._CR1842,1117,2444,1375.jpg" alt="movie1" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="https://m.media-amazon.com/images/M/MV5BMjczMGViZDktOTc5MC00NzRhLWJiMWYtMGQ2MWVkNjc4YWZmXkEyXkFqcGdeQWRvb2xpbmhk._V1_QL40_UX1000_CR0,0,1000,563_.jpg" alt="movie1" alt="Los Angeles" style="width:100%;" alt="Chicago" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="https://m.media-amazon.com/images/M/MV5BNTUzZjhkYTktMzQzZi00NWY2LWFkYmItZWIyM2U4OWFhNTE4XkEyXkFqcGdeQXRyYW5zY29kZS13b3JrZmxvdw@@._CR192,147,1404,790.jpg" alt="movie1" alt="Los Angeles" style="width:100%;" alt="New york" style="width:100%;">
+      </div>
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" style="left: 20px;"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" style="right: 20px;"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+                </div>
+            <div class="column right">
+                <h3>Up Next</h3>
+                <div class="container2">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNmM2MWQ0NzktNzU0OS00MjYzLTkxNDYtMzliNTA5ZmNkMmZlXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_QL40_UX256_CR0,0,256,379_.jpg" alt="tile1">   
+                    <div class="point">
+                        <a><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        width="32x" height="32px" fill="white" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+                        <g>
+	                       <g id="play-circle-outline">
+                            <path d="M204,369.75L357,255L204,140.25V369.75z M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255
+			                S395.25,0,255,0z M255,459c-112.2,0-204-91.8-204-204S142.8,51,255,51s204,91.8,204,204S367.2,459,255,459z"/>
+	                       </g>
+                        </g>
+                        </svg>
+                        </a>    
+                    <p>Outside the Wire</p>
+                    <p>Watch the latest Trailer</p>
+                    </div>    
+                </div> 
+                <div class="container2">
+                    <img src="https://m.media-amazon.com/images/M/MV5BZDkwNjFlYzYtOGY4YS00NDRjLTljZWYtNjEzZGViODFkODkxXkEyXkFqcGdeQXVyMzk0NzQ5MjU@._V1_QL40_UX256_CR0,0,256,379_.jpg" alt="tile2">  
+                    <div class="point">
+                    <a><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        width="32x" height="32px" fill="white" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+                        <g>
+	                       <g id="play-circle-outline">
+                            <path d="M204,369.75L357,255L204,140.25V369.75z M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255
+			                S395.25,0,255,0z M255,459c-112.2,0-204-91.8-204-204S142.8,51,255,51s204,91.8,204,204S367.2,459,255,459z"/>
+	                       </g>
+                        </g>
+                        </svg>
+                        </a>    
+                    <p>Films of Hope</p>
+                    <p>Watch the latest Trailer</p>
+                    </div>    
+                </div> 
+                <div class="container2">
+                    <img src="https://m.media-amazon.com/images/M/MV5BYTkwZWZkZDgtOTAyMS00NDM4LTgyMWQtMDQxOTY2ZTRmNzRiXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_QL40_UX256_CR0,0,256,379_.jpg" alt="tile3">    
+                    <div class="point">
+                    <a><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        width="32x" height="32px" fill="white" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+                        <g>
+	                       <g id="play-circle-outline">
+                            <path d="M204,369.75L357,255L204,140.25V369.75z M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255
+			                S395.25,0,255,0z M255,459c-112.2,0-204-91.8-204-204S142.8,51,255,51s204,91.8,204,204S367.2,459,255,459z"/>
+	                       </g>
+                        </g>
+                        </svg>
+                        </a>    
+                    <p>Penguin Bloom</p>
+                    <p>Watch the latest Trailer</p>
+                    </div>    
+                </div>
+                <h3><a href="" class="Browse_link">Browse Trailers ></a></h3>
+            </div>
+            </div>
+        </div>    
+        
+         <div class="feature">
+            <h1>Featured today</h1>
+            <div class="row">
+            <div class="today">
+                <a href=""><img src="https://m.media-amazon.com/images/M/MV5BZGEyMjZlZDctYmFkZi00ZDEwLWE4NzQtMjMzZDY0M2QwM2M1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX500_CR0,0,500,281_.jpg" alt="feature1"></a>
+                <a href="">The Latest Movie and TV Posters</a> 
+            </div>
+            <div class="today">
+                <a href=""><img src="https://m.media-amazon.com/images/M/MV5BMWEwZjI4ZWItY2M3Ny00NGI4LWEwZGQtZWNiYjk4YjZiZDg1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX500_CR0,26,500,281_.jpg" alt="feature2"></a>
+                <a href="">Photos We Love: The Latest Celebrity Shots</a>
+            </div>
+            <div class="today">
+                <a href=""><img src="https://m.media-amazon.com/images/M/MV5BNTUzZjhkYTktMzQzZi00NWY2LWFkYmItZWIyM2U4OWFhNTE4XkEyXkFqcGdeQXRyYW5zY29kZS13b3JrZmxvdw@@._CR192,147,1404,790.jpg"></a>
+                <a href="">Today in Film History: HAL 9000's Birthday</a>
+            </div>
+            </div>    
+        </div>
+        
+        <h1 class="trtitle">Trending</h1>
+        <div class="imagecontainer">   
+        <div id="trend"></div> 
+        </div> 
+        
+        
+        <h1 class="trtitle">Now Playing</h1>
+        <div class="imagecontainer">   
+        <div id="nowplay"></div> 
+        </div>
+        
+        <h1 class="trtitle">Top Rated</h1>
+        <div class="imagecontainer">   
+        <div id="top"></div> 
+        </div>
+        
+        <h1 class="trtitle">Upcoming</h1>
+        <div class="imagecontainer">   
+        <div id="upcom"></div> 
+        </div>
+        
+        <div id="overlay" onclick="off()">
+        <div class="imagecontainer">   
+        <div id="details"></div> 
+        </div>    
+        </div>
+        
+    </div>    
+	<footer></footer>
+    
+	
+</body>
+    <script>
+//function on() {
+  //document.getElementById("overlay").style.display = "block";
+//}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
+</script>
+    <script>
+      $('nav ul li.btn span').click(function(){
+        $('nav ul div.items').toggleClass("show");
+        $('nav ul li.btn span').toggleClass("show");
+      });
+    </script>
+
+</html>
